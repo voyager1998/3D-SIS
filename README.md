@@ -24,7 +24,11 @@ We provide the test data (.scene and images) as examples. The detailed format of
 * [SUNCG Test Data (1355MB)](http://kaldir.vc.in.tum.de/3dsis/suncg_test_data.zip)
 
 ## Installation
-Install dependencies ```pip install -r requirements.txt```
+Install dependencies 
+```bash
+conda env create -f environment.yml
+```
+
 Note: You may need to rebuild `NMS` and `RoIPooling` layer by running `python build.py` under `lib/layer_utils/nms` and `lib/layer_utils/roi_pooling` separately. The rest dependencies can be found in [requirements.txt](https://github.com/Sekunde/3D-SIS/blob/master/requirements.txt). 
 
 The code is tested on Ubuntu 16.04 with CUDA8.0 and GTX1080Ti. If you encounter any CUDA/GPU issues, change the `MAX_VOLUME` and `MAX_IMAGE` in `lib/utils/config.py` to 0. This will enable inference on CPU.
